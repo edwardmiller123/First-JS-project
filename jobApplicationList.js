@@ -1,4 +1,4 @@
-const applications = [{
+/*const applications = [{
     company: 'CouchBase',
     recruiter: 'none',
     date: undefined,
@@ -9,10 +9,19 @@ const applications = [{
     company: 'Skuuudle',
     recruiter: 'none',
     date: undefined,
-    jobTitle: 'Graduate Software Developer',
+    jobTitle: 'Graduate Software Developer', 
     status: undefined,
     apprenticeship: 'no'
-}]
+}] */
+const fsLibrary  = require('fs')
+ 
+fsLibrary.readFile('job applications.txt', (error, txtString) => {
+ 
+    if (error) throw err;
+    
+})
+
+let applications = JSON.parse(txtString);
 
 function updateApplication(obj, companyName, prop, value) {
     let selector = 0;
@@ -52,6 +61,6 @@ function updateApplication(obj, companyName, prop, value) {
 } 
 
 
-updateApplication(applications, 'Skuuudle', 'status', 'applied');
+console.log(updateApplication(applications, 'Skuuudle', 'status', 'applied'));
 
 

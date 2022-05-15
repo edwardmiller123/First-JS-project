@@ -14,14 +14,14 @@
     apprenticeship: 'no'
 }] */
 const fsLibrary  = require('fs')
- 
-fsLibrary.readFile('job applications.txt', (error, txtString) => {
+
+let appString = fsLibrary.readFile('job applications.txt','utf-8', (error, txtString) => {
  
     if (error) throw err;
-    
-})
-
-let applications = JSON.parse(txtString);
+    return txtString
+}) 
+// fix this. how to get output out of that ^^^
+let applications = JSON.parse(appString);
 
 function updateApplication(obj, companyName, prop, value) {
     let selector = 0;

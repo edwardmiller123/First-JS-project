@@ -10,7 +10,7 @@ Text file must be in form [].
 
 function updateApplication(file, companyName, prop, value) {
   const fslibary = require("fs");
-  let regex = /D/;
+  let regex = /[a-z]/;
   if (regex.test(prop) == true) {
     fslibary.readFile(file, "utf-8", function read(err, data1) {
       if (err) {
@@ -69,7 +69,7 @@ function updateApplication(file, companyName, prop, value) {
       return updatedObj;
     });
   } else {
-    console.log("Property must not be a number.");
+    console.log("Property must be a word.");
     return;
   }
 }

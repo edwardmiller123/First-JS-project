@@ -13,14 +13,19 @@
     status: undefined,
     apprenticeship: 'no'
 }] */
-const fsLibrary  = require('fs')
+const fslibary = require('fs')
 
-let appString = fsLibrary.readFile('job applications.txt','utf-8', (error, txtString) => {
- 
-    if (error) throw err;
-    return txtString
-}) 
-// fix this. how to get output out of that ^^^
+let appString = fslibary.readFile('job applications.txt','utf-8', function read(err, data) {
+                if (err) {
+                    throw err;
+                    return;
+                }
+                console.log(data);
+
+            });
+
+
+
 let applications = JSON.parse(appString);
 
 function updateApplication(obj, companyName, prop, value) {
@@ -62,5 +67,4 @@ function updateApplication(obj, companyName, prop, value) {
 
 
 console.log(updateApplication(applications, 'Skuuudle', 'status', 'applied'));
-
 

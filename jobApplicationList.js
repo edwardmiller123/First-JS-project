@@ -41,7 +41,7 @@ fslibary.readFile('job applications.txt','utf-8', function read(err, data) {
                 let newEntry = {company: companyName,
                                 recruiter: undefined,
                                 date: undefined,
-                                jobTitle: undefined,
+                                'Job Title': undefined,
                                 status: undefined,
                                 apprenticeship: undefined  }
                 newEntry[prop] = value;
@@ -65,7 +65,7 @@ Example: updateApplication(_,'new company', 'date', '16/05/22' )
 To remove a company: updateApplication(_, 'new company', 'delete', _)
 */
 
-    updateApplication(applications, 'AECOM', 'status', 'rejected');        
+    updateApplication(applications, 'CouchBase', 'Job Title', 'Graduate Software Developer');        
 
 });
 

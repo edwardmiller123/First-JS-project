@@ -12,13 +12,18 @@ fslibary.readFile('job applications.txt','utf-8', function read(err, data) {
         let updatedObj = [...obj]
         let selector = 0
         if (prop == 'delete') {
-            selector = 1;
+            
             for (let m = 0; m < updatedObj.length; m++) {
                 if (updatedObj[m].company == companyName) {
+                    selector = 1;
                     updatedObj.splice(m,1);
-                    console.log(companyName + ' has been deleted')
+                    console.log(companyName + ' has been deleted');
+
+                } else if (prop == 'delete' && selector === 0){
+                    console.log('That company is not in the list.');
+                    return;
                 }
-            }
+            } 
         } else {
             for (let n = 0; n < updatedObj.length; n++) {
                 
@@ -60,7 +65,7 @@ Example: updateApplication(_,'new company', 'date', '16/05/22' )
 To remove a company: updateApplication(_, 'new company', 'delete', _)
 */
 
-    updateApplication(applications, 'AECOM', 'delete', 'rejected');        
+    updateApplication(applications, 'AECOM', 'status', 'rejected');        
 
 });
 

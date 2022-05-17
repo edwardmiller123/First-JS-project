@@ -43,10 +43,7 @@ function updateApplication(file, companyName, prop, value) {
             } else if (
               updatedObj[n][prop] === undefined ||
               updatedObj[n].hasOwnProperty(prop) == false ||
-              (updatedObj[n][prop] != value &&
-                value != "?" &&
-                value != "??" &&
-                value != "delete")
+              (updatedObj[n][prop] != value && value != "?" && value != "??")
             ) {
               updatedObj[n][prop] = value;
               console.log(companyName + " application has been updated");

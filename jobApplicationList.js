@@ -12,7 +12,6 @@ Text file must be in form [].
 function updateApplication(file, companyName, prop, value) {
   const fslibary = require("fs");
   let regex1 = /[a-z]/;
-  // fix regex2 below
   let regex2 = /^\?$|^\?\?$|\w+|[\d+\/\d+\/\d+]/;
   if (regex1.test(prop) == true && regex2.test(value) == true) {
     fslibary.readFile(file, "utf-8", function read(err, data1) {

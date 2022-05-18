@@ -1,4 +1,4 @@
-updateApplication("job applications.txt", "new company", "date", "18/05/22");
+updateApplication("job applications.txt", "new company", "delete", "?");
 
 /*
 Input a file to write to, a company, a property and the value of that property to be added to the list 
@@ -43,18 +43,20 @@ function updateApplication(file, companyName, prop, value) {
             if (updatedObj[n].company == companyName) {
               selector = 2;
               if (value == "delete") {
-                updatedObj[n][prop] = undefined;
+                updatedObj[n][prop] == undefined;
                 console.log(prop + " has been removed");
               } else if (
-                ((updatedObj[n][prop] === undefined ||
+                ((updatedObj[n][prop] == undefined ||
                   updatedObj[n].hasOwnProperty(prop) == false) &&
                   regex3.test(prop) == false) ||
-                (updatedObj[n][prop] != value && value != "?" && value != "??" && regex3.test(prop) == false )
+                (updatedObj[n][prop] != value &&
+                  value != "?" &&
+                  value != "??" &&
+                  regex3.test(prop) == false)
               ) {
                 updatedObj[n][prop] = value;
                 console.log(companyName + " application has been updated");
               } else if (value == "?" || value == updatedObj[n][prop]) {
-                //fix here when value of prop is unefined
                 console.log(prop + " has value " + updatedObj[n][prop]);
                 return;
               } else if (value == "??") {

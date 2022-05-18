@@ -49,7 +49,7 @@ function updateApplication(file, companyName, prop, value) {
                 ((updatedObj[n][prop] === undefined ||
                   updatedObj[n].hasOwnProperty(prop) == false) &&
                   regex3.test(prop) == false) ||
-                (updatedObj[n][prop] != value && value != "?" && value != "??")
+                (updatedObj[n][prop] != value && value != "?" && value != "??" && regex3.test(prop) == false )
               ) {
                 updatedObj[n][prop] = value;
                 console.log(companyName + " application has been updated");

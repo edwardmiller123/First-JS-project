@@ -1,9 +1,4 @@
-updateApplication(
-  "job applications.txt",
-  "new company",
-  "date",
-  "18/05/22"
-);
+updateApplication("job applications.txt", "new company", "date", "18/05/22");
 
 /*
 Input a file to write to, a company, a property and the value of that property to be added to the list 
@@ -28,7 +23,7 @@ function updateApplication(file, companyName, prop, value) {
       }
       let updatedObj = [...JSON.parse(data1)];
       let selector = 0;
-      if ((companyName == "?" && prop == '?' && value == '?')) {
+      if (companyName == "?" && prop == "?" && value == "?") {
         console.log(updatedObj);
       } else {
         if (prop == "delete") {
@@ -51,13 +46,15 @@ function updateApplication(file, companyName, prop, value) {
                 updatedObj[n][prop] = undefined;
                 console.log(prop + " has been removed");
               } else if (
-              (updatedObj[n][prop] === undefined ||
-                updatedObj[n].hasOwnProperty(prop) == false) && regex3.test(prop) == false ||
+                ((updatedObj[n][prop] === undefined ||
+                  updatedObj[n].hasOwnProperty(prop) == false) &&
+                  regex3.test(prop) == false) ||
                 (updatedObj[n][prop] != value && value != "?" && value != "??")
               ) {
                 updatedObj[n][prop] = value;
                 console.log(companyName + " application has been updated");
-              } else if (value == "?" || value == updatedObj[n][prop]) {   //fix here when prop value of prop is unefined
+              } else if (value == "?" || value == updatedObj[n][prop]) {
+                //fix here when value of prop is unefined
                 console.log(prop + " has value " + updatedObj[n][prop]);
                 return;
               } else if (value == "??") {

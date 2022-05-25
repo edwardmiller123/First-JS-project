@@ -25,19 +25,25 @@ function updateApplication(file, companyName, prop, value) {
       }
       let updatedObj = [...JSON.parse(data1)];
       let selector = 0;
-      if (companyName == "total" && prop == '?' && value == '?') {
+      if (companyName == "total" && prop == "?" && value == "?") {
         console.log(updatedObj.length + " applications made.");
       } else if (companyName == "total") {
         let propCount = [];
         for (let j = 0; j < updatedObj.length; j++) {
-            if (updatedObj[j][prop] == value) {
-              propCount.push(updatedObj[j]);
-            } //fix this
+          if (updatedObj[j][prop] == value) {
+            propCount.push(updatedObj[j]);
+          } //fix this
         }
-        console.log('There are ' + propCount.length + ' applications with ' + prop + ' value ' + value);
+        console.log(
+          "There are " +
+            propCount.length +
+            " applications with " +
+            prop +
+            " value " +
+            value
+        );
         return;
-      }
-      else {
+      } else {
         if (companyName == "?" && prop == "?" && value == "?") {
           console.log(updatedObj);
         } else {

@@ -1,4 +1,4 @@
-updateApplication("job applications.txt", "total", "status", "applied");
+updateApplication("job applications.txt", "tnew company", "status", "applied");
 
 /*
 Input a file to write to, a company, a property and the value of that property to be added to the list 
@@ -32,7 +32,7 @@ function updateApplication(file, companyName, prop, value) {
         for (let j = 0; j < updatedObj.length; j++) {
           if (updatedObj[j][prop] == value) {
             propCount.push(updatedObj[j]);
-          } //fix this
+          }
         }
         console.log(
           "There are " +

@@ -13,6 +13,8 @@ To query all info on company application: updateApplication('list.txt', 'new com
 
 To query whole list: updateApplication('list.txt', '?', '?', '?')
 
-For total number of applications: updateApplication('list.txt', 'total', 'anything', 'anything') 
+For total number of applications: updateApplication('list.txt', 'total', '?', '?') 
 
-Text file must be in form [].
+For total number of applications with property 'prop' of value 'value': updateApplications('list.txt', 'total', 'prop', 'value')
+
+Text file must be in form []. (JS object)

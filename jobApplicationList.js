@@ -7,7 +7,8 @@ To remove a company: updateApplication('list.txt', 'new company', 'delete', _)
 To query a property: updateApplication('list.txt', 'new company', 'property you want', '?')
 To query all info on company application: updateApplication('list.txt', 'new company', 'anything other than delete', '??')
 To query whole list: updateApplication('list.txt', '?', '?', '?')
-For total number of applications: updateApplication('list.txt', 'total', 'anything', 'anything') 
+For total number of applications: updateApplication('list.txt', 'total', '?', '?')
+For total number of applications with property 'prop' of value 'value': updateApplications('list.txt', 'total', 'prop', 'value') 
 Text file must be in form [].
 */
 

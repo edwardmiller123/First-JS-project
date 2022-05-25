@@ -1,4 +1,4 @@
-updateApplication("job applications.txt", "new company", "date", "?");
+updateApplication("job applications.txt", "total", "status", "applied");
 
 /*
 Input a file to write to, a company, a property and the value of that property to be added to the list 
@@ -24,9 +24,19 @@ function updateApplication(file, companyName, prop, value) {
       }
       let updatedObj = [...JSON.parse(data1)];
       let selector = 0;
-      if (companyName == "total") {
+      if (companyName == "total" && prop == '?' && value == '?') {
         console.log(updatedObj.length + " applications made.");
-      } else {
+      } else if (companyName == "total") {
+        let propCount = [];
+        for (let j = 0; j < updatedObj.length; j++) {
+            if (updatedObj[j][prop] == value) {
+              propCount.push(updatedObj[j]);
+            } //fix this
+        }
+        console.log('There are ' + propCount.length + ' applications with ' + prop + ' value ' + value);
+        return;
+      }
+      else {
         if (companyName == "?" && prop == "?" && value == "?") {
           console.log(updatedObj);
         } else {
